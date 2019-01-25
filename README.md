@@ -15,8 +15,8 @@ A useful tool for converting MS Excel files(.xls or .xlsx) to Json type files
 ```json
 [{"Name":"idle","FadeTime":"0.4"},{"Name":"run","FadeTime":"0.3"},{"Name":"dance","FadeTime":"0.3"},{"Name":"attack","FadeTime":"0.5"}]
 ```
+<br><br>
 
-<br>
 ![](https://github.com/LizhuWeng/ExcelToJson/blob/master/Doc/test_result.JPG)
 
 
