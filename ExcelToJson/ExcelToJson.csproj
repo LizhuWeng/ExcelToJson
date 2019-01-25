@@ -1,0 +1,205 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5C9C2233-F2F6-42F5-AC5B-0648FCA994C2}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ExcelToJson</RootNamespace>
+    <AssemblyName>ExcelToJson</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>发布\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <ApplicationIcon>default.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CompressTool.cs" />
+    <Compile Include="ExcelToJsonForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExcelToJsonForm.Designer.cs">
+      <DependentUpon>ExcelToJsonForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ICSharpCode\BZip2\BZip2.cs" />
+    <Compile Include="ICSharpCode\BZip2\BZip2Constants.cs" />
+    <Compile Include="ICSharpCode\BZip2\BZip2Exception.cs" />
+    <Compile Include="ICSharpCode\BZip2\BZip2InputStream.cs" />
+    <Compile Include="ICSharpCode\BZip2\BZip2OutputStream.cs" />
+    <Compile Include="ICSharpCode\Checksums\Adler32.cs" />
+    <Compile Include="ICSharpCode\Checksums\CRC32.cs" />
+    <Compile Include="ICSharpCode\Checksums\IChecksum.cs" />
+    <Compile Include="ICSharpCode\Checksums\StrangeCRC.cs" />
+    <Compile Include="ICSharpCode\Core\FileSystemScanner.cs" />
+    <Compile Include="ICSharpCode\Core\INameTransform.cs" />
+    <Compile Include="ICSharpCode\Core\IScanFilter.cs" />
+    <Compile Include="ICSharpCode\Core\NameFilter.cs" />
+    <Compile Include="ICSharpCode\Core\PathFilter.cs" />
+    <Compile Include="ICSharpCode\Core\StreamUtils.cs" />
+    <Compile Include="ICSharpCode\Core\WindowsPathUtils.cs" />
+    <Compile Include="ICSharpCode\Encryption\PkzipClassic.cs" />
+    <Compile Include="ICSharpCode\Encryption\ZipAESStream.cs" />
+    <Compile Include="ICSharpCode\Encryption\ZipAESTransform.cs" />
+    <Compile Include="ICSharpCode\GZip\GZIPConstants.cs" />
+    <Compile Include="ICSharpCode\GZip\GZipException.cs" />
+    <Compile Include="ICSharpCode\GZip\GzipInputStream.cs" />
+    <Compile Include="ICSharpCode\GZip\GzipOutputStream.cs" />
+    <Compile Include="ICSharpCode\Lzw\LzwConstants.cs" />
+    <Compile Include="ICSharpCode\Lzw\LzwException.cs" />
+    <Compile Include="ICSharpCode\Lzw\LzwInputStream.cs" />
+    <Compile Include="ICSharpCode\SharpZipBaseException.cs" />
+    <Compile Include="ICSharpCode\Tar\InvalidHeaderException.cs" />
+    <Compile Include="ICSharpCode\Tar\TarArchive.cs" />
+    <Compile Include="ICSharpCode\Tar\TarBuffer.cs" />
+    <Compile Include="ICSharpCode\Tar\TarEntry.cs" />
+    <Compile Include="ICSharpCode\Tar\TarException.cs" />
+    <Compile Include="ICSharpCode\Tar\TarHeader.cs" />
+    <Compile Include="ICSharpCode\Tar\TarInputStream.cs" />
+    <Compile Include="ICSharpCode\Tar\TarOutputStream.cs" />
+    <Compile Include="ICSharpCode\Zip\Compression\Deflater.cs" />
+    <Compile Include="ICSharpCode\Zip\Compression\DeflaterConstants.cs" />
+    <Compile Include="ICSharpCode\Zip\Compression\DeflaterEngine.cs" />
+    <Compile Include="ICSharpCode\Zip\Compression\DeflaterHuffman.cs" />
+    <Compile Include="ICSharpCode\Zip\Compression\DeflaterPending.cs" />
+    <Compile Include="ICSharpCode\Zip\Compression\Inflater.cs" />
+    <Compile Include="ICSharpCode\Zip\Compression\InflaterDynHeader.cs" />
+    <Compile Include="ICSharpCode\Zip\Compression\InflaterHuffmanTree.cs" />
+    <Compile Include="ICSharpCode\Zip\Compression\PendingBuffer.cs" />
+    <Compile Include="ICSharpCode\Zip\Compression\Streams\DeflaterOutputStream.cs" />
+    <Compile Include="ICSharpCode\Zip\Compression\Streams\InflaterInputStream.cs" />
+    <Compile Include="ICSharpCode\Zip\Compression\Streams\OutputWindow.cs" />
+    <Compile Include="ICSharpCode\Zip\Compression\Streams\StreamManipulator.cs" />
+    <Compile Include="ICSharpCode\Zip\FastZip.cs" />
+    <Compile Include="ICSharpCode\Zip\IEntryFactory.cs" />
+    <Compile Include="ICSharpCode\Zip\WindowsNameTransform.cs" />
+    <Compile Include="ICSharpCode\Zip\ZipConstants.cs" />
+    <Compile Include="ICSharpCode\Zip\ZipEntry.cs" />
+    <Compile Include="ICSharpCode\Zip\ZipEntryFactory.cs" />
+    <Compile Include="ICSharpCode\Zip\ZipException.cs" />
+    <Compile Include="ICSharpCode\Zip\ZipExtraData.cs" />
+    <Compile Include="ICSharpCode\Zip\ZipFile.cs" />
+    <Compile Include="ICSharpCode\Zip\ZipHelperStream.cs" />
+    <Compile Include="ICSharpCode\Zip\ZipInputStream.cs" />
+    <Compile Include="ICSharpCode\Zip\ZipNameTransform.cs" />
+    <Compile Include="ICSharpCode\Zip\ZipOutputStream.cs" />
+    <Compile Include="LitJson\IJsonWrapper.cs" />
+    <Compile Include="LitJson\JsonData.cs" />
+    <Compile Include="LitJson\JsonException.cs" />
+    <Compile Include="LitJson\JsonMapper.cs" />
+    <Compile Include="LitJson\JsonMockWrapper.cs" />
+    <Compile Include="LitJson\JsonReader.cs" />
+    <Compile Include="LitJson\JsonWriter.cs" />
+    <Compile Include="LitJson\Lexer.cs" />
+    <Compile Include="LitJson\ParserToken.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ExcelToJsonForm.resx">
+      <DependentUpon>ExcelToJsonForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="LitJson\AssemblyInfo.cs.in" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="default.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
